@@ -111,7 +111,7 @@ You can read more about data mapper on [Wikipedia](https://en.wikipedia.org/wiki
 Example:
 
 ```typescript
-import {BaseEntity, Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
 export class User {
@@ -158,7 +158,7 @@ We can create such a function in a "custom repository".
 import {EntityRepository, Repository} from "typeorm";
 import {User} from "../entity/User";
 
-@EntityRepository()
+@EntityRepository(User)
 export class UserRepository extends Repository<User> {
        
     findByName(firstName: string, lastName: string) {
